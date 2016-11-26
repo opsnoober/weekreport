@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>周报系统</title>
+    <link href="{{ static_url("css/bootstrap.min.css") }}" rel="stylesheet">
+    <link href="{{ static_url("css/dashboard.css") }}" rel="stylesheet">
+    <link href="{{ static_url("css/bootstrapValidator.css") }}" rel="stylesheet">
+    <link href="{{ static_url("css/bootstrapValidator.min.css") }}" rel="stylesheet">
+
+    <!--菜单所用css-->
+    <link href="{{ static_url("css/plugins/metisMenu.css") }}" rel="stylesheet">
+    <link href="{{ static_url("css/plugins/metisMenu.min.css") }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ static_url("css/plugins/font-awesome.min.css") }}">
+    <link rel="stylesheet" href="{{ static_url("css/plugins/menu.css") }}">
+    <link rel="stylesheet" href="{{ static_url("css/plugins/prism.min.css") }}">
+
+  </head>
+
+  <body>
+    {% block header %}{% include 'header.html' %}{% end %}
+
+    {% block sidebar %}{% include 'sidebar.html' %}{% end %}
+    
+    {% block content %}{% end %}
+
+
+
+
+    <script src="{{ static_url("js/ie-emulation-modes-warning.js") }}"></script>
+    <script src="{{ static_url("js/ie10-viewport-bug-workaround.js") }}"></script>
+    <script src="{{ static_url("js/jquery-2.1.1.min.js") }}"></script>
+    <script src="{{ static_url("js/bootstrap.min.js") }}"></script>
+    <script src="{{ static_url("js/bootstrap-tab.js") }}"></script>
+    <script src="{{ static_url("js/bootstrapValidator.min.js") }}"></script>
+    <script src="{{ static_url("js/bootstrapValidator.js") }}"></script>
+    <!--导航栏js-->
+    <script src="{{ static_url("js/plugins/metisMenu.js") }}"></script>
+    <script src="{{ static_url("js/plugins/metisMenu.min.js") }}"></script>
+    <script src="{{ static_url("js/plugins/prism.min.js") }}"></script>
+    <script type="text/javascript">
+  $("#myTab").metisMenu({
+    toggle: false
+  });
+</script>
+    {% block javascript %}{% end %}
+</body>
+

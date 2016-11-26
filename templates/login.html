@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>登录页面</title>
+    <link href="{{ static_url("css/bootstrap.min.css") }}" rel="stylesheet">
+    <link href="{{ static_url("css/signin.css") }}" rel="stylesheet">
+  </head>
+  <body>
+	<div class="container">
+	<div class="row">  
+        <div class="col-xs" style="background-color:#eee;width:40%;margin:0 auto;">  
+	<form action="/login" method="post" class="form-signin" role="form">
+	<h2><center>周报系统</center></h2>
+	<hr>
+	<input type="username" class="form-control" placeholder="用户名" name="username" required autofocus>
+	<hr>
+	<input type="password" class="form-control" placeholder="密码" name="password" required>
+	<hr>
+	<button class="btn btn-info" type="submit">登录</button>
+        </form>
+        </div>
+        </div>
+        </div>
+  <script src="{{ static_url("js/ie-emulation-modes-warning.js") }}"></script>
+  </body>
+</html>
+

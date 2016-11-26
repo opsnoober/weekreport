@@ -1,0 +1,64 @@
+{% extends "../base.html" %}
+{% block content %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<input name="create_day" type="button" class="btn btn-primary btn-sm" value="新建日报" data-toggle="modal" data-target="#create_day" >
+
+    <br>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <th>用户名</th>
+                  <th>周</th>
+                  <th>工作类型</th>
+                  <th>工作内容</th>
+                  <th>创建时间</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+		  {% for row in rows %}
+                  <td>{{ row.id }}</td>
+                  <td>{{ row.user_name }}</td>
+                  <td>{{ row.week }}</td>
+                  <th>{{ row.work_type }}</th>
+                  <td>{{ row.work_content }}</td>
+                  <td>{{ row.create_time }}</td>
+	 	  <td><input name="update" type="button" class="btn btn-success btn-sm" value="编辑" 
+                  data-toggle="modal" data-target="#edit_day"  onclick="update(this)"; > </td>
+                  <td><input type="button"  class="btn btn-danger btn-sm" value="删除"
+                  data-toggle="modal" data-target="#del_day" onclick="del(this)";/></td>
+                </tr>
+		  {% end %}
+              </tbody>
+            </table>
+</div>
+<!--创建用户model-->
+{% include "create_day.html" %}
+<!--更新用户model-->
+{% include "edit_day.html" %}
+<!--删除用户model-->
+{% include "del_day.html" %}
+
+{% end %}
+{% block javascript %}
+<script>
+function del(obj){
+    var tds=$(obj).parent().parent().find('td');
+   $('#delete').val(tds.eq(0).text());
+        };
+
+function update(obj){
+   var tds=$(obj).parent().parent().find('td');
+   $('#id').val(tds.eq(0).text());
+   $('#week').val(tds.eq(1).text());
+   $('#work_type').val(tds.eq(2).text());
+   $('#work_content').val(tds.eq(3).text());
+   $('#update').modal('show');
+        };
+
+</script>
+{% end %}
+<!--('#update').modal('show');-->

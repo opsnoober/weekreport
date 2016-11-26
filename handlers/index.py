@@ -1,9 +1,12 @@
-#!/usr/bin/env python
-# coding=utf-8
+#coding:utf-8
 import tornado.web
-import time
+from base import BaseHandler
 
-class IndexHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.render("index.html",title="首页")
+class IndexHandler(BaseHandler):
+
+     @tornado.web.authenticated
+
+     def get(self):
+        name = self.get_secure_cookie("username")
+        self.render('index.html')
 
