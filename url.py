@@ -12,6 +12,7 @@ from handlers.week import *
 from handlers.day import * 
 
 url = [
+    (r'/', LoginHandler),
     (r'/index', IndexHandler),
     (r'/login', LoginHandler),
     (r'/logout', LogoutHandler),

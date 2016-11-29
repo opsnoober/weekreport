@@ -7,6 +7,7 @@
             <table class="table table-striped">
               <thead>
                 <tr>
+		  <th></th>
                   <th>用户名</th>
                   <th>周</th>
                   <th>工作类型</th>
@@ -19,9 +20,10 @@
               <tbody>
                 <tr>
 		  {% for row in rows %}
+		  <td style="visibility: hidden;">{{ row.id }}</td>
                   <td>{{ row.user_name }}</td>
                   <td>{{ row.week }}</td>
-                  <th>{{ row.work_type }}</th>
+                  <td>{{ row.work_type }}</td>
                   <td>{{ row.work_content }}</td>
                   <td>{{ row.create_time }}</td>
 	 	  <td><input name="update" type="button" class="btn btn-success btn-sm" value="编辑" 

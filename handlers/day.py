@@ -16,12 +16,14 @@ class DayHandler(BaseHandler):
         self.render("day/manage_day.html",rows=rows)
 
     def post(self):
+        id = self.get_argument('id')
         user_name = self.get_secure_cookie('username')
         week = self.get_argument('week')
         work_type = self.get_argument('work_type','')
         work_content = self.get_argument('work_content','')
         create_time = self.get_argument('create_time','')
         argument_data = {
+                'id': id,
 		'user_name': user_name,
         	'week': week,
         	'work_type':work_type,
@@ -53,7 +55,6 @@ class EditDayHandler(BaseHandler):
         for v in argument_data.values():
             print v
 
-        print user_name
         sql = 'update report set work_type="%(work_type)s",work_content="%(work_content)s",create_time="%(create_time)s" \
           where id="%(id)s"' %(argument_data)
         DB.execute(sql)
